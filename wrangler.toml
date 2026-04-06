@@ -1,0 +1,10 @@
+# ── Cloudflare Pages Konfiguration ─────────────────────────────────────────────
+# Deploy: wrangler pages deploy ./dist --project-name paul-martini
+name = "paul-martini"
+compatibility_date = "2026-03-01"
+pages_build_output_dir = "./dist"
+
+# ── Build-Konfiguration (CF Pages Dashboard) ─────────────────────────────────
+# Build command:     npm run build
+# Build output dir:  dist
+# Node.js Version:   22 (Settings → Environment Variables: NODE_VERSION=22)
