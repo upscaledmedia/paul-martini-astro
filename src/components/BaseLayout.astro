@@ -7,7 +7,7 @@ interface Props {
 }
 const { title, description, noIndex = false, canonical } = Astro.props;
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
-const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+const canonicalUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
 ---
 <!DOCTYPE html>
 <html lang="de">
