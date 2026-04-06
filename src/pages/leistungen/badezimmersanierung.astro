@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import '../../styles/global.css';
+
+const tel = '02651-4019589';
+const telHref = 'tel:+4926514019589';
+---
+
+<BaseLayout
+  title="Badezimmersanierung Mayen | Paul Martini Sanitär"
+  description="Professionelle Badezimmersanierung in Mayen und Umgebung — von der Planung bis zur Übergabe. Barrierefrei, modern & auf Maß. ☎ 02651-4019589"
+  canonical="/leistungen/badezimmersanierung/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Badezimmersanierung",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Paul Martini Sanitär",
+        "telephone": "+4926514019589",
+        "areaServed": "Mayen"
+      },
+      "areaServed": ["Mayen", "Polch", "Andernach", "Kehrig"]
+    })}</script>
+  </Fragment>
+
+  <header class="bg-[var(--color-secondary)] py-4 px-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" aria-label="Paul Martini Sanitär — zur Startseite" class="flex flex-col">
+        <span class="font-heading font-800 text-white text-lg">Paul Martini</span>
+        <span class="text-[var(--color-accent-light)] text-xs tracking-widest uppercase">Sanitär · Heizung · Klima</span>
+      </a>
+      <a href={telHref} class="bg-[var(--color-accent)] text-white font-semibold px-4 py-2 rounded-lg text-sm">{tel}</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-[var(--color-secondary)] py-16 sm:py-24 text-center text-white" aria-labelledby="page-heading">
+      <div class="max-w-3xl mx-auto px-4">
+        <span class="inline-block bg-white/10 text-white/80 text-sm px-4 py-1.5 rounded-full mb-4">Unsere Leistungen</span>
+        <h1 id="page-heading" class="text-white mb-4">Badezimmersanierung<br /><span class="text-[var(--color-accent-light)]">in Mayen & Umgebung</span></h1>
+        <p class="text-white/75 text-lg max-w-2xl mx-auto">
+          Wir sanieren Ihr Badezimmer von Grund auf — pünktlich, sauber und genau nach Ihren Vorstellungen.
+          Als Fachbetrieb bei Mayen sind wir Ihr verlässlicher Partner.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="grid sm:grid-cols-2 gap-8 mb-12">
+          {[
+            { titel: 'Komplette Badsanierung', text: 'Wir planen und realisieren Ihre Traum-Badezimmersanierung — von der Demontage bis zur Endabnahme.' },
+            { titel: 'Barrierefreies Bad', text: 'Ebenerdige Duschen, Haltegriffe und rollstuhlgerechte Lösungen für mehr Komfort und Sicherheit.' },
+            { titel: 'Modernisierung', text: 'Neues Design, neue Fliesen, neue Sanitärobjekte — wir machen Ihr Bad wieder modern.' },
+            { titel: 'Fliesen & Boden', text: 'Professionelle Fliesenarbeit in allen Formaten. Boden- und Wandfliesen nach Ihrem Geschmack.' },
+          ].map(l => (
+            <div class="bg-[var(--color-surface)] rounded-xl p-6">
+              <h3 class="font-heading font-700 text-[var(--color-text)] mb-2">{l.titel}</h3>
+              <p class="text-[var(--color-text-muted)] text-sm">{l.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-[var(--color-primary)] rounded-2xl p-8 text-center text-white">
+          <h2 class="text-white text-2xl font-heading font-800 mb-3">Kostenlose Beratung anfragen</h2>
+          <p class="text-white/80 mb-6">Wir schauen uns Ihr Bad vor Ort an und beraten Sie unverbindlich.</p>
+          <a href={telHref} class="inline-flex items-center gap-2 bg-white text-[var(--color-primary-text)] font-bold px-6 py-3 rounded-xl hover:bg-yellow-50 transition-colors">
+            {tel} anrufen
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[var(--color-secondary)] text-white/60 text-sm py-6 text-center">
+    <p>© {new Date().getFullYear()} Paul Martini Sanitär · <a href="/impressum/" class="hover:text-white">Impressum</a> · <a href="/datenschutz/" class="hover:text-white">Datenschutz</a></p>
+  </footer>
+</BaseLayout>

@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="Impressum | Paul Martini Sanitär · Heizung · Klima"
+  noIndex={true}
+>
+  <header class="bg-[var(--color-secondary)] py-4 px-4">
+    <div class="max-w-4xl mx-auto">
+      <a href="/" class="flex flex-col w-fit" aria-label="Paul Martini Sanitär — zur Startseite">
+        <span class="font-heading font-800 text-white text-lg">Paul Martini</span>
+        <span class="text-[var(--color-accent-light)] text-xs tracking-widest uppercase">Sanitär · Heizung · Klima</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <h1 class="text-3xl font-heading font-800 text-[var(--color-text)] mb-10">Impressum</h1>
+
+    <div class="prose prose-gray max-w-none space-y-6 text-[var(--color-text-muted)] text-sm leading-relaxed">
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">Angaben gemäß § 5 TMG</h2>
+        <p>
+          Paul Martini Sanitär - Heizung - Klima<br />
+          Inh. Sebastian Martini<br />
+          Polcher Straße 31<br />
+          56729 Kehrig
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">Kontakt</h2>
+        <p>
+          Telefon: 02651-4019589<br />
+          E-Mail: basti.martini@web.de
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+        <p>
+          Berufsbezeichnung: Meisterbetrieb für Sanitär, Heizung und Klima<br />
+          Zuständige Handwerkskammer: Handwerkskammer Koblenz<br />
+          Friedrich-Ebert-Ring 33, 56068 Koblenz
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">EU-Streitschlichtung</h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-primary-text)] underline">
+            https://ec.europa.eu/consumers/odr/
+          </a><br />
+          Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+        <p>
+          Wir nehmen an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht teil.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">Haftung für Inhalte</h2>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
+          allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+          verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen
+          zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-[var(--color-text)] mb-2">Urheberrecht</h2>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+          deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
+          außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors
+          bzw. Erstellers.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-[var(--color-secondary)] text-white/60 text-sm py-6 text-center">
+    <a href="/" class="hover:text-white transition-colors">← Zurück zur Startseite</a>
+  </footer>
+</BaseLayout>

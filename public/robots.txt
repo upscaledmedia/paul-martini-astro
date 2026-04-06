@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://paul-martini.pages.dev/sitemap-index.xml
