@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="Über uns | Paul Martini Sanitär · Kehrig bei Mayen"
+  description="Paul Martini Sanitär — Familienbetrieb in der 3. Generation aus Kehrig bei Mayen. Inhaber Sebastian Martini steht für Qualität, Pünktlichkeit und ehrliche Handwerksarbeit."
+  canonical="/ueber-uns/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Über uns — Paul Martini Sanitär",
+      "url": "https://paul-martini.pages.dev/ueber-uns/",
+      "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "Paul Martini Sanitär - Heizung - Klima",
+        "foundingDate": "1970",
+        "founder": { "@type": "Person", "name": "Sebastian Martini" },
+        "telephone": "+4926514019589",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Polcher Straße 31",
+          "addressLocality": "Kehrig",
+          "postalCode": "56729",
+          "addressCountry": "DE"
+        }
+      }
+    })}</script>
+  </Fragment>
+
+  <Header />
+
+  <main class="pt-16 sm:pt-20">
+
+    <!-- Hero -->
+    <section class="relative bg-[var(--color-secondary)] py-20 sm:py-28 text-white overflow-hidden" aria-labelledby="ueber-uns-heading">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0B1D35] via-[#0D2B4A] to-[#0A1628]" aria-hidden="true"></div>
+      <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;" aria-hidden="true"></div>
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <span class="inline-block bg-white/10 text-white/80 text-sm px-4 py-1.5 rounded-full mb-6">Über uns</span>
+        <h1 id="ueber-uns-heading" class="text-white mb-6">
+          Handwerk mit Herz —<br />
+          <span class="text-[var(--color-accent-light)]">seit 3 Generationen</span>
+        </h1>
+        <p class="text-white/75 text-lg max-w-2xl mx-auto leading-relaxed">
+          Paul Martini Sanitär steht für ehrliche Handwerksarbeit, Verlässlichkeit und das persönliche Gespräch.
+          Seit Jahrzehnten sind wir der Ansprechpartner für Sanitär, Heizung und Klima in der Region Mayen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gründer-Story -->
+    <section class="py-20 sm:py-28 bg-white" aria-labelledby="gruender-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <!-- Bild -->
+          <div class="fade-up relative">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/ueber-uns.jpg"
+                alt="Sebastian Martini — Inhaber Paul Martini Sanitär"
+                class="w-full h-full object-cover"
+                width="600"
+                height="450"
+                loading="lazy"
+              />
+            </div>
+            <div class="absolute -bottom-5 -right-5 bg-[var(--color-accent)] text-white rounded-xl px-6 py-4 shadow-lg shadow-orange-900/30">
+              <div class="font-heading font-800 text-2xl">3.</div>
+              <div class="text-sm font-medium">Generation</div>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="fade-up">
+            <span class="inline-block bg-[var(--color-primary)]/10 text-[var(--color-primary-text)] font-semibold text-sm px-4 py-1.5 rounded-full mb-5">Unsere Geschichte</span>
+            <h2 id="gruender-heading" class="mb-5">
+              Sebastian Martini —<br />
+              <span class="text-[var(--color-primary-text)]">Meister aus Leidenschaft</span>
+            </h2>
+            <p class="text-[var(--color-text-muted)] mb-4 leading-relaxed">
+              Paul Martini Sanitär ist ein Familienbetrieb aus Kehrig bei Mayen — bereits in der dritten Generation.
+              Inhaber Sebastian Martini hat das Handwerk von der Pike auf gelernt und führt das Unternehmen heute
+              mit dem gleichen Anspruch, den schon sein Großvater hatte: sauber arbeiten, ehrlich beraten, zuverlässig liefern.
+            </p>
+            <p class="text-[var(--color-text-muted)] mb-4 leading-relaxed">
+              Als zertifizierter Meisterbetrieb sind wir auf Sanitär-, Heizungs- und Klimatechnik spezialisiert.
+              Wir arbeiten im gesamten Raum Mayen, Polch, Andernach und Koblenz — und kommen auch zu Ihnen.
+            </p>
+            <p class="text-[var(--color-text-muted)] mb-8 leading-relaxed">
+              Was uns auszeichnet: kein Callcenter, kein Zwischenhändler. Sie sprechen immer direkt mit Sebastian Martini
+              oder einem seiner qualifizierten Mitarbeiter — und bekommen eine Antwort, auf die Sie sich verlassen können.
+            </p>
+
+            <blockquote class="border-l-4 border-[var(--color-accent)] pl-5 py-2">
+              <p class="text-[var(--color-text)] font-medium italic text-lg leading-snug">
+                „Wir behandeln jedes Zuhause wie unseres — mit dem Respekt,
+                den Ihr Vertrauen verdient."
+              </p>
+              <cite class="text-[var(--color-text-muted)] text-sm mt-2 block not-italic">— Sebastian Martini, Inhaber & Meister</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zahlen -->
+    <section class="py-20 sm:py-24 bg-[var(--color-surface)]" aria-labelledby="zahlen-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14 fade-up">
+          <h2 id="zahlen-heading" class="mb-3">Was uns ausmacht</h2>
+          <p class="text-[var(--color-text-muted)] max-w-xl mx-auto">
+            Zahlen und Fakten, die für uns sprechen.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { zahl: '3.', label: 'Generation', sub: 'Familienbetrieb mit Tradition' },
+            { zahl: '15+', label: 'Jahre Erfahrung', sub: 'Im SHK-Handwerk' },
+            { zahl: '5,0', label: 'Google-Bewertung', sub: '15 echte Kundenstimmen' },
+            { zahl: '100%', label: 'Kundenzufriedenheit', sub: 'Unser oberstes Ziel' },
+          ].map((s, i) => (
+            <div class={`bg-white rounded-2xl p-8 text-center shadow-sm fade-up`} style={`transition-delay: ${i * 80}ms`}>
+              <div class="font-heading font-800 text-[var(--color-primary-text)] text-4xl mb-1">{s.zahl}</div>
+              <div class="font-heading font-700 text-[var(--color-text)] text-lg mb-1">{s.label}</div>
+              <div class="text-[var(--color-text-muted)] text-sm">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Werte -->
+    <section class="py-20 sm:py-28 bg-[var(--color-secondary)] text-white" aria-labelledby="werte-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14 fade-up">
+          <span class="inline-block bg-white/10 text-white/80 text-sm px-4 py-1.5 rounded-full mb-4">Unsere Werte</span>
+          <h2 id="werte-heading" class="text-white mb-3">So arbeiten wir</h2>
+          <p class="text-white/60 max-w-xl mx-auto">
+            Drei Grundsätze, die uns seit Generationen leiten.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-8">
+          {[
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>`,
+              titel: 'Qualität',
+              text: 'Meisterbetrieb-Standard bei jeder Arbeit — egal ob kleiner Reparaturauftrag oder komplette Badsanierung.'
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`,
+              titel: 'Pünktlichkeit',
+              text: 'Wir kommen zum vereinbarten Termin — und schätzen Ihre Zeit genauso wie unsere.'
+            },
+            {
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="32" height="32"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>`,
+              titel: 'Ehrlichkeit',
+              text: 'Wir sagen Ihnen, was wirklich nötig ist — kein Aufbauschen, kein Verstecken. Faire Preise, klare Aussagen.'
+            },
+          ].map((w, i) => (
+            <div class="bg-white/5 rounded-2xl p-8 text-center fade-up" style={`transition-delay: ${i * 100}ms`}>
+              <div class="w-16 h-16 bg-[var(--color-accent)]/20 rounded-2xl flex items-center justify-center mx-auto mb-5 text-[var(--color-accent-light)]">
+                <Fragment set:html={w.icon} />
+              </div>
+              <h3 class="text-white font-heading font-700 text-xl mb-3">{w.titel}</h3>
+              <p class="text-white/60 text-sm leading-relaxed">{w.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-[var(--color-primary)]">
+      <div class="max-w-3xl mx-auto px-4 text-center fade-up">
+        <h2 class="text-white mb-4">Lernen Sie uns persönlich kennen</h2>
+        <p class="text-white/80 mb-8 text-lg">
+          Rufen Sie uns an oder schreiben Sie uns. Wir freuen uns auf Ihre Anfrage.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+4926514019589" class="inline-flex items-center justify-center gap-2 bg-white text-[var(--color-primary-text)] font-bold px-8 py-4 rounded-xl hover:bg-yellow-50 transition-colors text-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
+            </svg>
+            02651-4019589 anrufen
+          </a>
+          <a href="/kontakt/" class="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:border-white/70 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-lg">
+            Nachricht schreiben
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

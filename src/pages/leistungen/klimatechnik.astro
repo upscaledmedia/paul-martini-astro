@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../components/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import '../../styles/global.css';
 
 const tel = '02651-4019589';
@@ -11,17 +13,9 @@ const telHref = 'tel:+4926514019589';
   description="Klimaanlage kaufen & installieren lassen in Mayen — energieeffizient, leise, günstig. Daikin, Mitsubishi. ☎ 02651-4019589"
   canonical="/leistungen/klimatechnik/"
 >
-  <header class="bg-[var(--color-secondary)] py-4 px-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="/" aria-label="Paul Martini Sanitär — zur Startseite" class="flex flex-col">
-        <span class="font-heading font-800 text-white text-lg">Paul Martini</span>
-        <span class="text-[var(--color-accent-light)] text-xs tracking-widest uppercase">Sanitär · Heizung · Klima</span>
-      </a>
-      <a href={telHref} class="bg-[var(--color-accent)] text-white font-semibold px-4 py-2 rounded-lg text-sm">{tel}</a>
-    </div>
-  </header>
+  <Header />
 
-  <main>
+  <main class="pt-16 sm:pt-20">
     <section class="bg-[var(--color-secondary)] py-16 sm:py-24 text-center text-white" aria-labelledby="page-heading">
       <div class="max-w-3xl mx-auto px-4">
         <span class="inline-block bg-white/10 text-white/80 text-sm px-4 py-1.5 rounded-full mb-4">Klimatechnik</span>
@@ -60,7 +54,5 @@ const telHref = 'tel:+4926514019589';
     </section>
   </main>
 
-  <footer class="bg-[var(--color-secondary)] text-white/60 text-sm py-6 text-center">
-    <p>© {new Date().getFullYear()} Paul Martini Sanitär · <a href="/impressum/" class="hover:text-white">Impressum</a> · <a href="/datenschutz/" class="hover:text-white">Datenschutz</a></p>
-  </footer>
+  <Footer />
 </BaseLayout>

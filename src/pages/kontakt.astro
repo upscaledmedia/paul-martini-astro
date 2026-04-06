@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const tel = '02651-4019589';
@@ -21,20 +23,9 @@ const email = 'basti.martini@web.de';
     })}</script>
   </Fragment>
 
-  <!-- Header -->
-  <header class="bg-[var(--color-secondary)] py-4 px-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <a href="/" class="flex flex-col" aria-label="Paul Martini Sanitär — zur Startseite">
-        <span class="font-heading font-800 text-white text-lg">Paul Martini</span>
-        <span class="text-[var(--color-accent-light)] text-xs tracking-widest uppercase">Sanitär · Heizung · Klima</span>
-      </a>
-      <a href={telHref} class="bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
-        {tel}
-      </a>
-    </div>
-  </header>
+  <Header />
 
-  <main>
+  <main class="pt-16 sm:pt-20">
     <!-- Hero -->
     <section class="bg-[var(--color-surface)] py-16 sm:py-24 text-center" aria-labelledby="kontakt-heading">
       <div class="max-w-2xl mx-auto px-4">
@@ -191,7 +182,5 @@ const email = 'basti.martini@web.de';
     </section>
   </main>
 
-  <footer class="bg-[var(--color-secondary)] text-white/60 text-sm py-8 text-center">
-    <p>© {new Date().getFullYear()} Paul Martini Sanitär · <a href="/impressum/" class="hover:text-white transition-colors">Impressum</a> · <a href="/datenschutz/" class="hover:text-white transition-colors">Datenschutz</a></p>
-  </footer>
+  <Footer />
 </BaseLayout>

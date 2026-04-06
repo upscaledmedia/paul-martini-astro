@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const tel = '02651-4019589';
@@ -104,86 +106,22 @@ const einzugsgebiet = [
     })}</script>
   </Fragment>
 
-  <!-- ═══════════════════════════════════════════════
-       HEADER / NAV
-  ═══════════════════════════════════════════════ -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[var(--color-secondary)]/95 backdrop-blur-sm border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
-      <!-- Logo -->
-      <a href="/" class="flex flex-col leading-tight" aria-label="Paul Martini Sanitär - zur Startseite">
-        <span class="font-heading font-800 text-white text-lg sm:text-xl tracking-tight">Paul Martini</span>
-        <span class="text-[var(--color-accent-light)] text-xs sm:text-sm font-medium tracking-widest uppercase">Sanitär · Heizung · Klima</span>
-      </a>
+  <Header />
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8" aria-label="Hauptnavigation">
-        <a href="/#leistungen" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Leistungen</a>
-        <a href="/#ueber-uns" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Über uns</a>
-        <a href="/#bewertungen" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Bewertungen</a>
-        <a href="/kontakt/" class="text-white/80 hover:text-white text-sm font-medium transition-colors">Kontakt</a>
-      </nav>
-
-      <!-- CTA -->
-      <a
-        href={telHref}
-        class="hidden sm:flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
-        </svg>
-        {tel}
-      </a>
-
-      <!-- Mobile menu button -->
-      <button
-        id="menu-btn"
-        class="md:hidden text-white p-2"
-        aria-label="Menü öffnen"
-        aria-expanded="false"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Nav -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[var(--color-secondary)] border-t border-white/10 px-4 py-4">
-      <nav class="flex flex-col gap-4" aria-label="Mobile Navigation">
-        <a href="/#leistungen" class="text-white/80 hover:text-white font-medium">Leistungen</a>
-        <a href="/#ueber-uns" class="text-white/80 hover:text-white font-medium">Über uns</a>
-        <a href="/#bewertungen" class="text-white/80 hover:text-white font-medium">Bewertungen</a>
-        <a href="/kontakt/" class="text-white/80 hover:text-white font-medium">Kontakt</a>
-        <a href={telHref} class="bg-[var(--color-accent)] text-white font-semibold px-4 py-3 rounded-lg text-center">
-          {tel} anrufen
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn?.addEventListener('click', () => {
-      const isOpen = !menu?.classList.contains('hidden');
-      menu?.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(!isOpen));
-    });
-  </script>
-
-  <main>
+  <main class="pt-16 sm:pt-20">
 
     <!-- ═══════════════════════════════════════════════
          §1 — HERO 1A FULLSCREEN
     ═══════════════════════════════════════════════ -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-secondary)]" aria-label="Hero">
-      <!-- Gradient Background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-[#0B1D35] via-[#0D2B4A] to-[#0A1628]" aria-hidden="true"></div>
+      <!-- Hero Background Image -->
+      <div class="absolute inset-0" aria-hidden="true">
+        <img src="/images/hero-bg.jpg" alt="" class="w-full h-full object-cover opacity-30" width="1920" height="1080" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0B1D35]/90 via-[#0D2B4A]/75 to-[#0A1628]/60"></div>
+      </div>
       <!-- Decorative circles -->
       <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl" aria-hidden="true"></div>
       <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-[var(--color-accent)]/10 rounded-full blur-3xl" aria-hidden="true"></div>
-      <!-- Grid pattern -->
-      <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;" aria-hidden="true"></div>
 
       <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 pb-16">
         <!-- Badge -->
@@ -331,15 +269,17 @@ const einzugsgebiet = [
     <section id="ueber-uns" class="py-20 sm:py-28 bg-[var(--color-surface)]" aria-labelledby="ueber-uns-heading">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <!-- Bild-Platzhalter mit CI-Farben -->
+          <!-- Bild -->
           <div class="fade-up relative">
-            <div class="aspect-[4/3] bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-primary)] rounded-2xl overflow-hidden flex items-center justify-center">
-              <div class="text-center text-white p-8">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" width="80" height="80" class="mx-auto mb-4 opacity-40" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-                </svg>
-                <p class="opacity-60 text-sm">Sebastian Martini</p>
-              </div>
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/ueber-uns.jpg"
+                alt="Sebastian Martini — Inhaber Paul Martini Sanitär"
+                class="w-full h-full object-cover"
+                width="600"
+                height="450"
+                loading="lazy"
+              />
             </div>
             <!-- Floating badge -->
             <div class="absolute -bottom-4 -right-4 bg-[var(--color-accent)] text-white rounded-xl px-5 py-3 shadow-lg shadow-orange-900/30">
@@ -587,55 +527,5 @@ const einzugsgebiet = [
 
   </main>
 
-  <!-- ═══════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════ -->
-  <footer class="bg-[var(--color-secondary)] text-white py-12" role="contentinfo">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-        <!-- Logo & Beschreibung -->
-        <div class="lg:col-span-2">
-          <div class="flex flex-col mb-4">
-            <span class="font-heading font-800 text-white text-xl tracking-tight">Paul Martini</span>
-            <span class="text-[var(--color-accent-light)] text-sm font-medium tracking-widest uppercase">Sanitär · Heizung · Klima</span>
-          </div>
-          <p class="text-white/60 text-sm leading-relaxed max-w-xs">
-            Ihr Fachbetrieb für Badezimmersanierung, Heizung und Klimatechnik
-            in Kehrig bei Mayen — seit Generationen für Sie da.
-          </p>
-        </div>
-
-        <!-- Kontakt -->
-        <div>
-          <h3 class="text-white font-semibold text-sm uppercase tracking-widest mb-4">Kontakt</h3>
-          <ul class="space-y-2 text-white/60 text-sm">
-            <li><a href={telHref} class="hover:text-white transition-colors">{tel}</a></li>
-            <li><a href={`mailto:${email}`} class="hover:text-white transition-colors">{email}</a></li>
-            <li class="text-white/60">{adresse}</li>
-            <li class="text-white/60">Mo–Fr: 7:45–16:00 Uhr</li>
-          </ul>
-        </div>
-
-        <!-- Links -->
-        <div>
-          <h3 class="text-white font-semibold text-sm uppercase tracking-widest mb-4">Navigation</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/#leistungen" class="text-white/60 hover:text-white transition-colors">Leistungen</a></li>
-            <li><a href="/#ueber-uns" class="text-white/60 hover:text-white transition-colors">Über uns</a></li>
-            <li><a href="/kontakt/" class="text-white/60 hover:text-white transition-colors">Kontakt</a></li>
-            <li><a href="/impressum/" class="text-white/60 hover:text-white transition-colors">Impressum</a></li>
-            <li><a href="/datenschutz/" class="text-white/60 hover:text-white transition-colors">Datenschutz</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-xs">
-        <p>© {new Date().getFullYear()} Paul Martini Sanitär - Heizung - Klima · Alle Rechte vorbehalten</p>
-        <div class="flex gap-4">
-          <a href="/impressum/" class="hover:text-white/80 transition-colors">Impressum</a>
-          <a href="/datenschutz/" class="hover:text-white/80 transition-colors">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 </BaseLayout>
