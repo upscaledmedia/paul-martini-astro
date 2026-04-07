@@ -6,6 +6,7 @@ import '../../styles/global.css';
 
 const tel = '02651-4019589';
 const telHref = 'tel:+4926514019589';
+const email = 'info@paul-martini.de';
 ---
 
 <BaseLayout
@@ -16,39 +17,197 @@ const telHref = 'tel:+4926514019589';
   <Header />
 
   <main class="pt-16 sm:pt-20">
-    <section class="bg-[var(--color-secondary)] py-16 sm:py-24 text-center text-white" aria-labelledby="page-heading">
-      <div class="max-w-3xl mx-auto px-4">
-        <span class="inline-block bg-[var(--color-accent)]/20 text-[var(--color-accent-light)] text-sm px-4 py-1.5 rounded-full mb-4">Schnelle Hilfe</span>
-        <h1 id="page-heading" class="text-white mb-4">Sanitär-Reparaturen<br /><span class="text-[var(--color-accent-light)]">in Mayen & Umgebung</span></h1>
-        <p class="text-white/75 text-lg max-w-2xl mx-auto">
-          Rohrbruch, verstopfte Leitung oder Heizungsausfall — wir kommen schnell und helfen zuverlässig.
-          Rufen Sie uns an!
-        </p>
-        <div class="mt-8">
-          <a href={telHref} class="inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-bold text-xl px-8 py-4 rounded-xl transition-colors">
-            Jetzt anrufen: {tel}
-          </a>
+
+    <!-- Hero -->
+    <section class="relative bg-[var(--color-secondary)] py-20 sm:py-28 overflow-hidden" aria-labelledby="page-heading">
+      <div class="absolute inset-0">
+        <img
+          src="/images/reparatur-hero.jpg"
+          alt="Sanitär-Fachkraft bei der Reparatur"
+          class="w-full h-full object-cover opacity-20"
+          width="1200"
+          height="800"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-secondary)]/80 to-transparent"></div>
+      </div>
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl">
+          <span class="inline-block bg-[var(--color-accent)] text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">Schnelle Hilfe</span>
+          <h1 id="page-heading" class="text-white mb-5">
+            Sanitär-Reparaturen<br />
+            <span class="text-[var(--color-accent-light)]">in Mayen & Umgebung</span>
+          </h1>
+          <p class="text-white/75 text-lg leading-relaxed mb-8">
+            Rohrbruch, verstopfte Leitung oder Heizungsausfall — wir kommen schnell und helfen zuverlässig.
+            Als Meisterbetrieb in der Region Mayen sind wir Ihr verlässlicher Ansprechpartner.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={telHref} class="inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-bold px-7 py-4 rounded-xl transition-colors text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="22" height="22" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
+              </svg>
+              Jetzt anrufen: {tel}
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 sm:py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="grid sm:grid-cols-2 gap-8 mb-12">
+    <!-- Leistungen -->
+    <section class="py-20 sm:py-24 bg-white" aria-labelledby="leistungen-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-14 fade-up">
+          <span class="inline-block bg-[var(--color-primary)]/10 text-[var(--color-primary-text)] font-semibold text-sm px-4 py-1.5 rounded-full mb-4">Reparatur-Leistungen</span>
+          <h2 id="leistungen-heading" class="mb-3">Was wir reparieren</h2>
+          <p class="text-[var(--color-text-muted)] max-w-xl mx-auto">
+            Wir reparieren alle Probleme rund um Sanitär, Heizung und Klima — schnell, sauber und zu fairen Preisen.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { titel: 'Rohrbruch', text: 'Schnelle Ortung und Reparatur bei Wasserrohrbrüchen. Wir minimieren den Schaden.' },
-            { titel: 'Heizungsreparatur', text: 'Heizung ausgefallen? Wir diagnostizieren und reparieren alle gängigen Heizsysteme.' },
-            { titel: 'Rohrverstopfung', text: 'Professionelle Rohrreinigung bei hartnäckigen Verstopfungen.' },
-            { titel: 'Versicherungsschäden', text: 'Wir unterstützen Sie bei der Schadensabwicklung mit Ihrer Versicherung.' },
-          ].map(l => (
-            <div class="bg-[var(--color-surface)] rounded-xl p-6">
-              <h3 class="font-heading font-700 text-[var(--color-text)] mb-2">{l.titel}</h3>
-              <p class="text-[var(--color-text-muted)] text-sm">{l.text}</p>
+            {
+              titel: 'Rohrbruch & Wasserrohrschaden',
+              text: 'Schnelle Ortung und Reparatur bei Wasserrohrbrüchen. Wir minimieren den Wasserschaden und reparieren fachgerecht.',
+            },
+            {
+              titel: 'Heizungsreparatur',
+              text: 'Heizung ausgefallen? Wir diagnostizieren Fehler an Gas-, Öl- und Wärmepumpenheizungen aller Hersteller und reparieren schnell.',
+            },
+            {
+              titel: 'Rohrverstopfung',
+              text: 'Professionelle Rohrreinigung bei hartnäckigen Verstopfungen in Abfluss, WC, Dusche oder Küchenabfluss.',
+            },
+            {
+              titel: 'Tropfende Armaturen',
+              text: 'Tropfender Wasserhahn oder Dusche? Wir tauschen Dichtungen, Kartuschen und Armaturen schnell und sauber aus.',
+            },
+            {
+              titel: 'Druckverlust in der Heizung',
+              text: 'Häufiges Nachfüllen nötig? Wir suchen undichte Stellen und beheben Druckverlust dauerhaft.',
+            },
+            {
+              titel: 'Versicherungsschäden',
+              text: 'Wir unterstützen Sie bei der Schadensdokumentation für Ihre Versicherung und stellen alle notwendigen Unterlagen bereit.',
+            },
+          ].map((l, i) => (
+            <div class="bg-[var(--color-surface)] rounded-xl p-7 fade-up" style={`transition-delay: ${i * 60}ms`}>
+              <h3 class="font-heading font-700 text-[var(--color-text)] text-lg mb-3">{l.titel}</h3>
+              <p class="text-[var(--color-text-muted)] leading-relaxed">{l.text}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
+
+    <!-- Warum wir -->
+    <section class="py-20 sm:py-24 bg-[var(--color-surface)]" aria-labelledby="warum-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="fade-up">
+            <span class="inline-block bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-semibold text-sm px-4 py-1.5 rounded-full mb-5">Warum Paul Martini?</span>
+            <h2 id="warum-heading" class="mb-6">Ihr verlässlicher Reparaturpartner</h2>
+            <ul class="space-y-4">
+              {[
+                'Schnelle Reaktionszeit im Raum Mayen & Umgebung',
+                'Meisterbetrieb mit zertifizierten Fachkräften',
+                'Transparente Preise — keine versteckten Kosten',
+                'Alle Marken und Systeme — Sanitär, Heizung, Klima',
+                'Saubere Arbeit — wir hinterlassen keine Chaos',
+                'Unterstützung bei Versicherungsabwicklung',
+              ].map(v => (
+                <li class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" class="text-[var(--color-accent)] shrink-0 mt-0.5" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-[var(--color-text)]">{v}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-sm fade-up">
+            <h3 class="font-heading font-800 text-[var(--color-text)] text-xl mb-2">Problem melden</h3>
+            <p class="text-[var(--color-text-muted)] mb-6 leading-relaxed">
+              Rufen Sie uns an — wir vereinbaren schnell einen Termin und lösen das Problem zuverlässig.
+            </p>
+            <a href={telHref} class="flex items-center gap-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-bold px-6 py-5 rounded-xl transition-colors mb-4 text-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="22" height="22" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
+              </svg>
+              {tel} anrufen
+            </a>
+            <a href={`mailto:${email}?subject=Reparatur%20anfragen`} class="flex items-center gap-3 bg-[var(--color-surface)] hover:bg-[var(--color-border)] text-[var(--color-text)] font-semibold px-6 py-4 rounded-xl transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              E-Mail schreiben
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 sm:py-24 bg-white" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 fade-up">
+          <h2 id="faq-heading" class="mb-3">Häufige Fragen zu Reparaturen</h2>
+        </div>
+        <div class="space-y-4">
+          {[
+            {
+              frage: 'Wie schnell können Sie bei einem Rohrbruch kommen?',
+              antwort: 'Wir versuchen bei dringenden Fällen so schnell wie möglich zu kommen. Rufen Sie uns an und schildern Sie die Situation — wir koordinieren dann schnellstmöglich einen Termin.',
+            },
+            {
+              frage: 'Was kostet eine Sanitärreparatur?',
+              antwort: 'Die Kosten hängen von der Art des Schadens ab. Wir nennen Ihnen nach der telefonischen Schilderung eine ungefähre Einschätzung und geben Ihnen vor der Reparatur eine transparente Kostenschätzung.',
+            },
+            {
+              frage: 'Meine Heizung springt nicht mehr an — was tun?',
+              antwort: 'Prüfen Sie zunächst den Wasserdruck (sollte bei 1,5–2 bar liegen) und den Sicherungskasten. Hilft das nicht, rufen Sie uns an — wir diagnostizieren das Problem und reparieren.',
+            },
+            {
+              frage: 'Wer zahlt bei einem Rohrbruch durch Frost?',
+              antwort: 'Das hängt von Ihrer Versicherung ab. Eine Leitungswasserversicherung übernimmt in der Regel Schäden durch Rohrbruch. Wir helfen Ihnen mit der Schadensdokumentation für Ihre Versicherung.',
+            },
+            {
+              frage: 'Können Sie auch Altbauten reparieren?',
+              antwort: 'Ja, wir sind erfahren mit Altbauten und alten Rohrsystemen aller Art. Auch ältere Kupfer-, Stahl- und Bleileitungen sind kein Problem für uns.',
+            },
+          ].map((q, i) => (
+            <details class="bg-[var(--color-surface)] rounded-xl overflow-hidden fade-up group" style={`transition-delay: ${i * 60}ms`}>
+              <summary class="px-7 py-5 font-heading font-700 text-[var(--color-text)] cursor-pointer flex items-center justify-between gap-4 list-none hover:text-[var(--color-primary-text)] transition-colors">
+                {q.frage}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="18" height="18" class="shrink-0 text-[var(--color-text-muted)] group-open:rotate-180 transition-transform" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <div class="px-7 pb-6 text-[var(--color-text-muted)] leading-relaxed">
+                {q.antwort}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-[var(--color-primary)]" aria-labelledby="cta-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 id="cta-heading" class="text-white mb-4">Problem? Wir kommen.</h2>
+        <p class="text-white/80 text-lg mb-8">
+          Einfach anrufen — wir koordinieren einen schnellen Termin für Sie.
+        </p>
+        <a href={telHref} class="inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-bold px-10 py-5 rounded-xl transition-colors text-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="24" height="24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
+          </svg>
+          {tel} anrufen
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <Footer />

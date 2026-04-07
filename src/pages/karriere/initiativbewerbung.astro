@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+
+const tel = '02651-4019589';
+const telHref = 'tel:+4926514019589';
+const email = 'info@paul-martini.de';
+---
+
+<BaseLayout
+  title="Initiativbewerbung | Paul Martini Sanitär · Mayen"
+  description="Kein passender Job dabei? Schick uns deine Initiativbewerbung! Wir freuen uns auf motivierte SHK-Fachkräfte im Raum Mayen."
+  canonical="/karriere/initiativbewerbung/"
+>
+  <Header />
+
+  <main class="pt-16 sm:pt-20">
+
+    <!-- Hero -->
+    <section class="bg-[var(--color-secondary)] py-20 sm:py-24 text-center" aria-labelledby="initiativ-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <span class="inline-block bg-[var(--color-accent)] text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">Immer offen</span>
+        <h1 id="initiativ-heading" class="text-white mb-5">
+          Nicht das Richtige dabei?<br />
+          <span class="text-[var(--color-accent-light)]">Bewirb dich einfach initiativ.</span>
+        </h1>
+        <p class="text-white/75 text-lg leading-relaxed">
+          Wir wachsen stetig und sind immer an motivierten SHK-Fachkräften interessiert.
+          Schick uns deine Unterlagen — wir melden uns.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-20 sm:py-24 bg-white" aria-labelledby="bewerbung-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+          <div class="fade-up">
+            <h2 id="bewerbung-heading" class="text-2xl font-heading font-800 text-[var(--color-text)] mb-6">Wer passt zu uns?</h2>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+              Als Familienbetrieb im SHK-Handwerk suchen wir Menschen, die anpacken können und Freude an ihrer Arbeit haben.
+              Ob erfahrene Fachkraft oder Berufseinsteiger — wenn du motiviert bist und gerne im Team arbeitest, bist du bei uns richtig.
+            </p>
+
+            <h3 class="font-heading font-700 text-[var(--color-text)] mb-4">Das interessiert uns bei dir</h3>
+            <ul class="space-y-3 mb-8">
+              {[
+                'Ausbildung im SHK-Bereich (Anlagenmechaniker, Klempner, Gas-Wasser-Installateur)',
+                'Handwerkliches Geschick und technisches Verständnis',
+                'Zuverlässigkeit und Teamfähigkeit',
+                'Führerschein Klasse B',
+                'Kundenfreundliches Auftreten',
+              ].map(item => (
+                <li class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" class="text-[var(--color-accent)] shrink-0 mt-0.5" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-[var(--color-text)]">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="/karriere/" class="inline-flex items-center gap-2 text-[var(--color-text-muted)] hover:text-[var(--color-primary-text)] text-sm transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+              </svg>
+              Alle offenen Stellen ansehen
+            </a>
+          </div>
+
+          <div class="space-y-6">
+            <div class="bg-[var(--color-primary)] rounded-2xl p-8 text-white fade-up">
+              <h3 class="text-white font-heading font-700 text-xl mb-4">So bewirbst du dich</h3>
+              <div class="space-y-4 mb-6">
+                {[
+                  { schritt: '1', text: 'Ruf uns an oder schick eine kurze E-Mail' },
+                  { schritt: '2', text: 'Erzähl uns von dir und deiner Erfahrung' },
+                  { schritt: '3', text: 'Wir laden dich zum Kennenlernen ein' },
+                ].map(s => (
+                  <div class="flex items-start gap-4">
+                    <span class="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white text-sm font-bold flex items-center justify-center shrink-0">{s.schritt}</span>
+                    <p class="text-white/80 pt-1">{s.text}</p>
+                  </div>
+                ))}
+              </div>
+              <a
+                href={`mailto:${email}?subject=Initiativbewerbung%20Paul%20Martini%20Sanit%C3%A4r`}
+                class="block text-center bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white font-bold px-6 py-3 rounded-xl transition-colors mb-3"
+              >
+                Per E-Mail bewerben
+              </a>
+              <a
+                href={telHref}
+                class="block text-center bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-colors border border-white/20"
+              >
+                {tel} anrufen
+              </a>
+            </div>
+
+            <div class="bg-[var(--color-surface)] rounded-2xl p-6 fade-up">
+              <h3 class="font-heading font-700 text-[var(--color-text)] mb-3">Kontakt</h3>
+              <address class="not-italic space-y-2 text-[var(--color-text-muted)] text-sm">
+                <p class="font-semibold text-[var(--color-text)]">Paul Martini Sanitär – Heizung – Klima</p>
+                <p>Polcher Straße 31</p>
+                <p>56729 Kehrig</p>
+                <p class="pt-2">
+                  <a href={telHref} class="text-[var(--color-primary-text)] hover:underline">{tel}</a>
+                </p>
+                <p>
+                  <a href={`mailto:${email}`} class="text-[var(--color-primary-text)] hover:underline">{email}</a>
+                </p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
